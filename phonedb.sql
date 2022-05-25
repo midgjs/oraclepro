@@ -40,6 +40,8 @@ values (seq_person_id.nextval, '이정재', '010-4444-4444', '02-4444-4444');
 insert into person
 values (seq_person_id.nextval, '서장훈', '010-5555-5555', '02-5555-5555');
 
+commit;
+
 --select문
 select *
 from person;
