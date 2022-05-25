@@ -124,7 +124,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate();
 
 			// 4.결과처리
-			System.out.println(count + "건 삭제 되었습니다.");
+			System.out.println("[" + count + "건 삭제 되었습니다.]");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -148,7 +148,7 @@ public class PhoneDao {
 			String query = "";
 			query += " update person ";
 			query += " set name = ?, ";
-			query += "     hp = ? ";
+			query += "     hp = ?, ";
 			query += "     company = ? ";
 			query += " where person_id = ? ";
 			System.out.println(query);

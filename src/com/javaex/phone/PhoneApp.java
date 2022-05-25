@@ -13,7 +13,6 @@ public class PhoneApp {
 		String name = null;
 		String hp = null;
 		String company = null;
-		int id = 0;
 		
 		//프로그램 시작
 		
@@ -59,13 +58,13 @@ public class PhoneApp {
 				PersonVo v02 = new PersonVo(name, hp, company);
 				phoneDao.personInsert(v02);
 
-				System.out.println("[1건 등록되었습니다.]");
+				System.out.println();
 				
 			} else if(menu == 3) {
 				//수정
 				System.out.println("3.수정");
 				System.out.print("번호 > ");
-				id = sc.nextInt();
+				int id = sc.nextInt();
 				sc.nextLine(); 
 				System.out.print("이름 > ");
 				name = sc.nextLine();
@@ -74,9 +73,9 @@ public class PhoneApp {
 				System.out.print("회사번호 > ");
 				company = sc.nextLine();
 
-				PersonVo v03 = new PersonVo(id, name, hp, company);
-				phoneDao.personUpdate(v03);
-
+				PersonVo p1 = new PersonVo(id, name, hp, company);
+				phoneDao.personUpdate(p1);
+				
 				System.out.println();
 			}
 			else if(menu == 4) {
@@ -86,8 +85,8 @@ public class PhoneApp {
 				int num = sc.nextInt();
 				sc.nextLine();
 				
-				phoneDao.personDelete(menu);
-				System.out.println("[1건 삭제되었습니다.]");
+				phoneDao.personDelete(num);
+				System.out.println();
 				
 			} else if(menu == 5) {
 				//검색기능
